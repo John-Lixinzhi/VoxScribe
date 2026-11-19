@@ -1,0 +1,245 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  padding: $spacing-lg $page-padding $spacing-xl;
+  background: linear-gradient(180deg, #edf1ff 0%, $color-bg-page 42%);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: $spacing-xl $spacing-lg;
+  border-radius: $radius-lg;
+  background: linear-gradient(135deg, $color-primary-dark 0%, $color-primary 58%, $color-primary-light 100%);
+  color: $color-text-white;
+}
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.waveLogo {
+  width: 72rpx;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rpx;
+  border-radius: $radius-md;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.waveBar {
+  width: 6rpx;
+  border-radius: $radius-round;
+  background: $color-text-white;
+}
+
+.brandName {
+  display: block;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  letter-spacing: 1rpx;
+}
+
+.brandTag {
+  display: block;
+  margin-top: $spacing-xs;
+  font-size: $font-size-xs;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.heroTitle {
+  display: block;
+  margin-top: $spacing-xl;
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-semibold;
+  line-height: 1.4;
+}
+
+.heroDesc {
+  display: block;
+  margin-top: $spacing-sm;
+  font-size: $font-size-sm;
+  line-height: $line-height-loose;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.quotaPill {
+  display: inline-flex;
+  margin-top: $spacing-md;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $radius-round;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: $font-size-xs;
+}
+
+.card {
+  margin-top: $spacing-md;
+  padding: $spacing-lg;
+  border-radius: $radius-lg;
+  background: $color-bg-card;
+  box-shadow: $shadow-card;
+}
+
+.uploadCard {
+  border: 2rpx dashed #b9c5eb;
+  text-align: center;
+}
+
+.uploadIcon {
+  width: 88rpx;
+  height: 88rpx;
+  margin: 0 auto $spacing-sm;
+  border-radius: $radius-round;
+  background: $color-primary-soft;
+  color: $color-primary;
+  font-size: 52rpx;
+  font-weight: $font-weight-normal;
+  line-height: 84rpx;
+}
+
+.uploadTitle {
+  display: block;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  @include text-ellipsis;
+}
+
+.uploadDesc {
+  display: block;
+  margin-top: $spacing-xs;
+  color: $color-text-tertiary;
+  font-size: $font-size-sm;
+}
+
+.fileMeta {
+  margin-top: $spacing-sm;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+}
+
+.chooseButton {
+  @include button-reset;
+  min-width: 240rpx;
+  height: $button-height-md;
+  margin: $spacing-md auto 0;
+  padding: 0 $spacing-lg;
+  border: 2rpx solid $color-primary;
+  border-radius: $radius-button;
+  background: $color-primary-soft;
+  color: $color-primary;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.86;
+    transform: scale(0.98);
+  }
+}
+
+.sectionTitle {
+  display: block;
+  margin-bottom: $spacing-md;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+}
+
+.optionLabel {
+  display: block;
+  margin-top: $spacing-md;
+  margin-bottom: $spacing-sm;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+}
+
+.optionLabel:first-of-type {
+  margin-top: 0;
+}
+
+.optionRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+}
+
+.optionChip {
+  min-width: 112rpx;
+  height: $button-height-sm;
+  padding: 0 $spacing-md;
+  border: 2rpx solid $color-border;
+  border-radius: $radius-button;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+  line-height: 60rpx;
+  text-align: center;
+  transition: all $transition-fast;
+
+  &:active {
+    opacity: 0.82;
+  }
+}
+
+.optionChipActive {
+  border-color: $color-primary;
+  background: $color-primary-soft;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+}
+
+.switchRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: $spacing-lg;
+  padding-top: $spacing-md;
+  border-top: 2rpx solid $color-divider;
+}
+
+.switchTitle {
+  display: block;
+  font-weight: $font-weight-medium;
+}
+
+.switchDesc {
+  display: block;
+  margin-top: $spacing-xs;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+}
+
+.submitButton {
+  @include button-reset;
+  width: 100%;
+  height: $button-height-lg;
+  margin-top: $spacing-md;
+  border: 0;
+  border-radius: $radius-button;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white !important;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.submitButtonDisabled {
+  opacity: 0.58;
+}
+
+.footnote {
+  display: block;
+  margin-top: $spacing-md;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+  line-height: $line-height-loose;
+  text-align: center;
+}

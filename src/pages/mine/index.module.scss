@@ -1,0 +1,274 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  padding: $spacing-lg $page-padding $spacing-xl;
+  background: linear-gradient(180deg, #edf1ff 0%, $color-bg-page 36%);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-sm 0 $spacing-lg;
+}
+
+.avatar {
+  @include flex-center;
+  flex-shrink: 0;
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: $radius-round;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white;
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+}
+
+.profileText {
+  min-width: 0;
+}
+
+.nickname {
+  display: block;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+}
+
+.profileDesc {
+  display: block;
+  margin-top: $spacing-xs;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+}
+
+.quotaCard {
+  position: relative;
+  overflow: hidden;
+  padding: $spacing-xl $spacing-lg;
+  border-radius: $radius-xl;
+  background: linear-gradient(135deg, $color-primary-dark 0%, $color-primary 64%, $color-primary-light 100%);
+  color: $color-text-white;
+  box-shadow: 0 12rpx 32rpx rgba(49, 87, 213, 0.2);
+}
+
+.quotaLabel {
+  display: block;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: $font-size-sm;
+}
+
+.quotaValueRow {
+  display: flex;
+  align-items: baseline;
+  gap: $spacing-sm;
+  margin-top: $spacing-sm;
+}
+
+.quotaValue {
+  font-size: 88rpx;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+}
+
+.quotaUnit {
+  font-size: $font-size-lg;
+}
+
+.quotaMeta {
+  display: block;
+  margin-top: $spacing-sm;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: $font-size-xs;
+}
+
+.rechargeButton {
+  @include button-reset;
+  width: 100%;
+  height: $button-height-md;
+  margin-top: $spacing-lg;
+  border-radius: $radius-button;
+  background: $color-text-white;
+  color: $color-primary;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+
+  &:active {
+    opacity: 0.88;
+  }
+}
+
+.actionRow {
+  display: flex;
+  gap: $spacing-md;
+  margin-top: $spacing-md;
+}
+
+.actionItem {
+  flex: 1;
+  padding: $spacing-lg;
+  border-radius: $radius-lg;
+  background: $color-bg-card;
+  box-shadow: $shadow-card;
+
+  &:active {
+    opacity: 0.86;
+  }
+}
+
+.actionIcon {
+  @include flex-center;
+  width: 64rpx;
+  height: 64rpx;
+  margin-bottom: $spacing-sm;
+  border-radius: $radius-md;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-medium;
+}
+
+.actionIconPrimary {
+  background: $color-primary-soft;
+  color: $color-primary;
+}
+
+.actionIconSuccess {
+  background: #e9f8ef;
+  color: $color-success;
+}
+
+.actionTitle,
+.actionDesc {
+  display: block;
+}
+
+.actionTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+}
+
+.actionDesc {
+  margin-top: $spacing-xs;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+}
+
+.section {
+  margin-top: $spacing-md;
+  padding: $spacing-lg;
+  border-radius: $radius-lg;
+  background: $color-bg-card;
+  box-shadow: $shadow-card;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sectionTitle {
+  display: block;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+}
+
+.sectionLink {
+  color: $color-primary;
+  font-size: $font-size-sm;
+}
+
+.emptyOrders {
+  padding: $spacing-lg 0 $spacing-sm;
+  color: $color-text-tertiary;
+  font-size: $font-size-sm;
+  line-height: $line-height-loose;
+}
+
+.orderItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-md;
+  padding: $spacing-md 0;
+  border-bottom: 2rpx solid $color-divider;
+
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.orderMain {
+  flex: 1;
+  min-width: 0;
+}
+
+.orderName,
+.orderMeta {
+  display: block;
+}
+
+.orderName {
+  font-weight: $font-weight-medium;
+}
+
+.orderMeta {
+  margin-top: $spacing-xs;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+}
+
+.orderSide {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.orderPrice,
+.orderStatus {
+  display: block;
+}
+
+.orderPrice {
+  font-weight: $font-weight-semibold;
+}
+
+.orderStatus {
+  margin-top: $spacing-xs;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+}
+
+.paid {
+  color: $color-success;
+}
+
+.pending {
+  color: $color-warning;
+}
+
+.failed {
+  color: $color-error;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-md;
+  padding-top: $spacing-md;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+}
+
+.infoValue {
+  color: $color-text-tertiary;
+  text-align: right;
+}
+
+.version {
+  display: block;
+  margin-top: $spacing-xl;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+  text-align: center;
+}
