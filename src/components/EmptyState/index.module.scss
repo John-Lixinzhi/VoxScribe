@@ -1,0 +1,59 @@
+@use '@/styles/variables.scss' as *;
+
+.container {
+  padding: $spacing-xl $spacing-lg;
+  text-align: center;
+}
+
+.symbol {
+  width: 112rpx;
+  height: 112rpx;
+  margin: 0 auto $spacing-md;
+  padding: 28rpx 24rpx;
+  border-radius: $radius-lg;
+  background: $color-primary-soft;
+}
+
+.symbolLine {
+  height: 8rpx;
+  margin-bottom: $spacing-sm;
+  border-radius: $radius-round;
+  background: $color-primary-light;
+
+  &:last-child {
+    width: 64%;
+    margin-bottom: 0;
+  }
+}
+
+.title {
+  display: block;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+}
+
+.description {
+  display: block;
+  margin-top: $spacing-sm;
+  color: $color-text-tertiary;
+  font-size: $font-size-sm;
+  line-height: $line-height-loose;
+}
+
+.action {
+  @include button-reset;
+  min-width: 220rpx;
+  height: $button-height-md;
+  margin: $spacing-md auto 0;
+  padding: 0 $spacing-lg;
+  border: 0;
+  border-radius: $radius-button;
+  background: $color-primary;
+  color: $color-text-white;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.88;
+    transform: scale(0.98);
+  }
+}

@@ -1,0 +1,38 @@
+@use '@/styles/compat.scss';
+@use '@/styles/variables.scss' as *;
+
+// 全局样式
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB',
+    sans-serif;
+  font-size: $font-size-md;
+  line-height: $line-height-normal;
+  color: $color-text-primary;
+  background-color: $color-bg-page;
+}
+
+view,
+text,
+button,
+scroll-view {
+  box-sizing: border-box;
+}
+
+button {
+  font: inherit;
+}
+
+// H5 纯文字 tabBar：隐藏无 src 的占位图标并居中标签
+.weui-tabbar__icon:not([src]) {
+  display: none;
+}
+
+.weui-tabbar__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weui-tabbar__label {
+  margin: 0;
+}

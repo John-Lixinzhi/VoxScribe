@@ -1,0 +1,116 @@
+@use '@/styles/variables.scss' as *;
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-lg;
+  border: 2rpx solid $color-border;
+  border-radius: $radius-lg;
+  background: $color-bg-card;
+  transition: all $transition-fast;
+
+  &:active {
+    opacity: 0.88;
+  }
+}
+
+.cardSelected {
+  border-color: $color-primary;
+  background: linear-gradient(135deg, $color-bg-card 0%, $color-primary-soft 100%);
+  box-shadow: 0 8rpx 24rpx rgba(49, 87, 213, 0.1);
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+}
+
+.name {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+}
+
+.tag {
+  padding: 4rpx 12rpx;
+  border-radius: $radius-xs;
+  background: #fff2e8;
+  color: $color-warning;
+  font-size: $font-size-xs;
+}
+
+.duration,
+.description {
+  display: block;
+}
+
+.duration {
+  margin-top: $spacing-sm;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+}
+
+.description {
+  margin-top: $spacing-xs;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+  line-height: $line-height-normal;
+}
+
+.side {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  color: $color-primary;
+}
+
+.currency {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+}
+
+.price {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+}
+
+.unitPrice {
+  display: block;
+  margin-top: $spacing-xs;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+  white-space: nowrap;
+}
+
+.radio {
+  @include flex-center;
+  width: 32rpx;
+  height: 32rpx;
+  margin: $spacing-sm 0 0 auto;
+  border: 2rpx solid $color-text-disabled;
+  border-radius: $radius-round;
+  box-sizing: border-box;
+}
+
+.radioSelected {
+  border-color: $color-primary;
+}
+
+.radioInner {
+  width: 18rpx;
+  height: 18rpx;
+  border-radius: $radius-round;
+  background: $color-primary;
+}

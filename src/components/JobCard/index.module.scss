@@ -1,0 +1,107 @@
+@use '@/styles/variables.scss' as *;
+
+.card {
+  padding: $spacing-lg;
+  border-radius: $radius-lg;
+  background: $color-bg-card;
+  box-shadow: $shadow-card;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.88;
+    transform: scale(0.99);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-sm;
+}
+
+.fileName {
+  flex: 1;
+  min-width: 0;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  @include text-ellipsis;
+}
+
+.status {
+  flex-shrink: 0;
+  padding: 6rpx $spacing-sm;
+  border-radius: $radius-sm;
+  background: $color-bg-hover;
+  color: $color-text-secondary;
+  font-size: $font-size-xs;
+  white-space: nowrap;
+}
+
+.processing,
+.queued {
+  background: $color-primary-soft;
+  color: $color-primary;
+}
+
+.completed {
+  background: #e9f8ef;
+  color: $color-success;
+}
+
+.failed {
+  background: #fff0ed;
+  color: $color-error;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  margin-top: $spacing-sm;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+}
+
+.progressSection {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-top: $spacing-md;
+}
+
+.progressTrack {
+  flex: 1;
+  overflow: hidden;
+  height: 12rpx;
+  border-radius: $radius-round;
+  background: $color-divider;
+}
+
+.progressValue {
+  height: 100%;
+  border-radius: $radius-round;
+  background: linear-gradient(90deg, $color-primary 0%, $color-primary-light 100%);
+  transition: width $transition-slow;
+}
+
+.progressText {
+  min-width: 64rpx;
+  color: $color-primary;
+  font-size: $font-size-xs;
+  text-align: right;
+}
+
+.error {
+  display: block;
+  margin-top: $spacing-md;
+  color: $color-error;
+  font-size: $font-size-sm;
+  @include text-ellipsis-multi(2);
+}
+
+.resultMeta {
+  display: block;
+  margin-top: $spacing-md;
+  color: $color-success;
+  font-size: $font-size-sm;
+}
