@@ -533,11 +533,11 @@ def ensure_ollama(model: str = OLLAMA_MODEL, wait: float = 90.0) -> bool:
         deadline = time.time() + wait
         while time.time() < deadline:
             if ollama_alive(1.0):
-                log(f"[润色] AI 引擎已就绪")
+                log("[润色] AI 引擎已就绪")
                 break
             time.sleep(1.0)
         else:
-            log(f"[润色] AI 引擎启动超时，本次跳过润色")
+            log("[润色] AI 引擎启动超时，本次跳过润色")
             return False
 
     if not _has_model(model):

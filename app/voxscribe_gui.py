@@ -301,6 +301,7 @@ class App(BaseTk):
         self.logbox.configure(state="normal")
         self.logbox.insert("end", text + "\n")
         self.logbox.see("end")
+        self.logbox.configure(state="disabled")
 
     def _drain(self) -> None:
         try:
