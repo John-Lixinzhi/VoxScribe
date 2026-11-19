@@ -1,0 +1,286 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  padding: $spacing-lg $page-padding $spacing-xl;
+  background: $color-bg-page;
+}
+
+.loading,
+.notFound {
+  margin-top: 30vh;
+  padding: 0 $spacing-lg;
+  color: $color-text-tertiary;
+  font-size: $font-size-md;
+  line-height: $line-height-loose;
+  text-align: center;
+}
+
+.fileCard,
+.progressCard,
+.failedCard,
+.summaryCard,
+.resultCard {
+  border-radius: $radius-lg;
+  background: $color-bg-card;
+  box-shadow: $shadow-card;
+}
+
+.fileCard {
+  padding: $spacing-lg;
+}
+
+.fileHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-md;
+}
+
+.fileName {
+  flex: 1;
+  min-width: 0;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-normal;
+}
+
+.status {
+  flex-shrink: 0;
+  padding: 6rpx $spacing-sm;
+  border-radius: $radius-sm;
+  background: $color-bg-hover;
+  color: $color-text-secondary;
+  font-size: $font-size-xs;
+}
+
+.queued,
+.processing {
+  background: $color-primary-soft;
+  color: $color-primary;
+}
+
+.completed {
+  background: #e9f8ef;
+  color: $color-success;
+}
+
+.failed {
+  background: #fff0ed;
+  color: $color-error;
+}
+
+.fileMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  margin-top: $spacing-md;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+}
+
+.progressCard,
+.failedCard {
+  margin-top: $spacing-md;
+  padding: $spacing-xl $spacing-lg;
+  text-align: center;
+}
+
+.progressIcon {
+  @include flex-center;
+  width: 88rpx;
+  height: 88rpx;
+  margin: 0 auto $spacing-md;
+  border-radius: $radius-round;
+  background: $color-primary-soft;
+}
+
+.progressDot {
+  width: 32rpx;
+  height: 32rpx;
+  border: 6rpx solid $color-primary;
+  border-top-color: transparent;
+  border-radius: $radius-round;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.progressTitle,
+.failedTitle {
+  display: block;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+}
+
+.progressDesc,
+.failedDesc {
+  display: block;
+  margin-top: $spacing-sm;
+  color: $color-text-tertiary;
+  font-size: $font-size-sm;
+  line-height: $line-height-loose;
+}
+
+.failedTitle {
+  color: $color-error;
+}
+
+.progressRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin: $spacing-lg 0;
+}
+
+.progressTrack {
+  flex: 1;
+  overflow: hidden;
+  height: 14rpx;
+  border-radius: $radius-round;
+  background: $color-divider;
+}
+
+.progressValue {
+  height: 100%;
+  border-radius: $radius-round;
+  background: linear-gradient(90deg, $color-primary 0%, $color-primary-light 100%);
+  transition: width $transition-slow;
+}
+
+.progressText {
+  min-width: 64rpx;
+  color: $color-primary;
+  font-size: $font-size-sm;
+  text-align: right;
+}
+
+.primaryButton,
+.secondaryButton,
+.copyButton {
+  @include button-reset;
+  width: 100%;
+  height: $button-height-md;
+  border-radius: $radius-button;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+
+  &:active {
+    opacity: 0.86;
+  }
+}
+
+.primaryButton,
+.copyButton {
+  background: $color-primary;
+  color: $color-text-white;
+}
+
+.primaryButton {
+  margin-top: $spacing-lg;
+}
+
+.secondaryButton {
+  margin: $spacing-lg auto 0;
+  border: 2rpx solid $color-border;
+  background: $color-bg-card;
+  color: $color-text-secondary;
+}
+
+.summaryCard {
+  display: flex;
+  margin-top: $spacing-md;
+  padding: $spacing-lg 0;
+}
+
+.summaryItem {
+  flex: 1;
+  min-width: 0;
+  border-right: 2rpx solid $color-divider;
+  text-align: center;
+
+  &:last-child {
+    border-right: 0;
+  }
+}
+
+.summaryValue,
+.summaryLabel {
+  display: block;
+}
+
+.summaryValue {
+  color: $color-primary;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+}
+
+.summaryLabel {
+  margin-top: $spacing-xs;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+}
+
+.resultCard {
+  overflow: hidden;
+  margin-top: $spacing-md;
+  padding: $spacing-lg;
+}
+
+.tabRow {
+  display: flex;
+  gap: $spacing-xs;
+  padding: $spacing-xs;
+  border-radius: $radius-md;
+  background: $color-bg-page;
+}
+
+.tabItem {
+  flex: 1;
+  height: 64rpx;
+  border-radius: $radius-sm;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+  line-height: 64rpx;
+  text-align: center;
+}
+
+.tabItemActive {
+  background: $color-bg-card;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+  box-shadow: $shadow-card;
+}
+
+.resultContent {
+  height: 640rpx;
+  margin-top: $spacing-md;
+  padding: $spacing-md;
+  box-sizing: border-box;
+  border-radius: $radius-md;
+  background: #f8f9fb;
+}
+
+.resultText {
+  display: block;
+  color: $color-text-primary;
+  font-size: $font-size-md;
+  line-height: $line-height-loose;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.monospace {
+  font-family: Consolas, monospace;
+  font-size: $font-size-sm;
+}
+
+.copyButton {
+  margin-top: $spacing-md;
+}

@@ -1,0 +1,92 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  padding: $spacing-lg $page-padding $spacing-xl;
+  background: linear-gradient(180deg, #edf1ff 0%, $color-bg-page 36%);
+}
+
+.pageTitle {
+  display: block;
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+}
+
+.pageDesc {
+  display: block;
+  margin-top: $spacing-xs;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+}
+
+.stats {
+  display: flex;
+  gap: $spacing-sm;
+  margin-top: $spacing-md;
+}
+
+.statCard {
+  flex: 1;
+  min-width: 0;
+  padding: $spacing-md $spacing-lg;
+  border-radius: $radius-lg;
+  background: $color-bg-card;
+  box-shadow: $shadow-card;
+}
+
+.statValue {
+  display: block;
+  color: $color-primary;
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+}
+
+.statLabel {
+  display: block;
+  margin-top: $spacing-xs;
+  color: $color-text-tertiary;
+  font-size: $font-size-sm;
+}
+
+.filterRow {
+  display: flex;
+  gap: $spacing-xs;
+  margin: $spacing-lg 0 $spacing-md;
+  padding: 6rpx;
+  border-radius: $radius-button;
+  background: #e9edf5;
+}
+
+.filterChip {
+  flex: 1;
+  min-width: 0;
+  height: $button-height-sm;
+  border-radius: $radius-button;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+  line-height: $button-height-sm;
+  text-align: center;
+  white-space: nowrap;
+  transition: all $transition-fast;
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.filterChipActive {
+  background: $color-bg-card;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+}
+
+.jobItem {
+  margin-bottom: $spacing-md;
+}
+
+.loading {
+  padding: $spacing-xl 0;
+  color: $color-text-tertiary;
+  font-size: $font-size-sm;
+  text-align: center;
+}

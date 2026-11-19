@@ -1,0 +1,180 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  padding: $spacing-lg $page-padding 220rpx;
+  box-sizing: border-box;
+  background: $color-bg-page;
+}
+
+.hero {
+  padding: $spacing-xl $spacing-lg;
+  border-radius: $radius-xl;
+  background: linear-gradient(135deg, #172554 0%, $color-primary-dark 48%, $color-primary 100%);
+  color: $color-text-white;
+}
+
+.heroEyebrow {
+  display: block;
+  color: #bfdbfe;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 3rpx;
+}
+
+.heroTitle {
+  display: block;
+  margin-top: $spacing-md;
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-semibold;
+  line-height: 1.45;
+}
+
+.heroDesc {
+  display: block;
+  margin-top: $spacing-md;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: $font-size-sm;
+  line-height: $line-height-loose;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-md;
+  margin: $spacing-xl 0 $spacing-md;
+}
+
+.sectionTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+}
+
+.sectionHint {
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+}
+
+.loading {
+  padding: $spacing-xl;
+  color: $color-text-tertiary;
+  font-size: $font-size-sm;
+  text-align: center;
+}
+
+.planList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.benefitCard,
+.notice {
+  margin-top: $spacing-md;
+  padding: $spacing-lg;
+  border-radius: $radius-lg;
+  background: $color-bg-card;
+}
+
+.benefitTitle,
+.noticeTitle {
+  display: block;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+}
+
+.benefitRow {
+  display: flex;
+  gap: $spacing-md;
+  margin-top: $spacing-md;
+}
+
+.benefitItem {
+  flex: 1;
+  padding: $spacing-sm;
+  border-radius: $radius-sm;
+  background: $color-primary-soft;
+  color: $color-primary-dark;
+  font-size: $font-size-sm;
+  text-align: center;
+}
+
+.notice {
+  background: #fffaf2;
+}
+
+.noticeTitle {
+  color: $color-warning;
+}
+
+.noticeText {
+  display: block;
+  margin-top: $spacing-sm;
+  color: $color-text-secondary;
+  font-size: $font-size-xs;
+  line-height: $line-height-loose;
+}
+
+.purchaseBar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-md $page-padding calc(#{$spacing-md} + env(safe-area-inset-bottom));
+  border-top: 2rpx solid $color-border;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: $shadow-float;
+}
+
+.selectedSummary {
+  flex: 1;
+  min-width: 0;
+}
+
+.selectedName,
+.selectedMeta {
+  display: block;
+}
+
+.selectedName {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+}
+
+.selectedMeta {
+  margin-top: $spacing-xs;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+}
+
+.purchaseButton {
+  @include button-reset;
+  width: 248rpx;
+  height: $button-height-lg;
+  border-radius: $radius-button;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white !important;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+
+  &:active {
+    opacity: 0.86;
+  }
+}
+
+.purchaseButtonDisabled {
+  opacity: 0.58;
+}
+
+.paymentNote {
+  display: block;
+  margin-top: $spacing-md;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+  text-align: center;
+}
