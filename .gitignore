@@ -1,0 +1,40 @@
+# 本地模型与大文件：首次运行按需下载，不进 Git
+models/
+ollama/
+cache/
+runtime/
+_internal/
+
+# 转写结果与日志
+output/
+logs/
+*.log
+
+# 打包产物
+release/
+_buildwork/
+_buildtools/
+build/
+dist/
+*.spec
+*.exe
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 小程序与本地服务
+node_modules/
+.pai/
+.temp/
+.env
+.env.*
+!.env.example
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
