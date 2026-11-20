@@ -276,6 +276,21 @@ npm run dev:weapp        # 产物在 dist/，用微信开发者工具导入项�
 npm run build:h5         # 可选：浏览器里预览 H5 版（mock 数据）
 ```
 
+把 ASR 服务跑起来（镜像里已装好 faster-whisper）：
+
+```bash
+cd server
+docker build -t voxscribe-asr .
+docker run -d --name voxscribe-asr -p 8000:8000 \
+  -e ASR_SERVICE_TOKEN=换成你自己的令牌 \
+  -v voxscribe-models:/data/models \
+  voxscribe-asr
+
+curl http://127.0.0.1:8000/healthz
+```
+
+服务对外只有三个接口：`GET /healthz`、`POST /v1/transcriptions`、`GET /v1/transcriptions/{job_id}`，除健康检查外都要带 `Authorization: Bearer <ASR_SERVICE_TOKEN>`。模型缓存在挂载的 `/data/models` 里，容器重建不用重新下载。云函数侧的 `ASR_SERVICE_URL` 填这个服务的 HTTPS 地址。
+
 真实上线前需要填写自己的微信 AppID、CloudBase 环境、`ASR_SERVICE_URL`、`ASR_SERVICE_TOKEN` 和微信支付商户参数，变量清单见 [.env.example](.env.example)。没有这些配置时仍可开发界面和流程，但不应把 mock 结果当作真实转写或真实支付。
 
 ## 📄 License
