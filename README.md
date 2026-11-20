@@ -4,7 +4,7 @@
 >
 > 基于 faster-whisper 的 Windows 本地转写工具，支持批量音视频、TXT / SRT / JSON 输出，以及可选的 Ollama 中文润色。
 
-[![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-brightgreen?style=flat-square)](#-极速上手)
+[![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-brightgreen?style=flat-square)](#quickstart)
 [![Python](https://img.shields.io/badge/Python-3.12-blue?style=flat-square)](requirements.txt)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-v1.0.0-blue?style=flat-square)](https://github.com/John-Lixinzhi/VoxScribe/commits/main)
@@ -26,7 +26,7 @@
 | 下载 | 适合谁 | 包含组件 |
 | :--- | :--- | :--- |
 | [⬇️ 下载源码 (ZIP)](https://github.com/John-Lixinzhi/VoxScribe/archive/refs/heads/main.zip) | 想直接使用或继续改造 | 图形界面 + CLI + 启动脚本 + EXE 打包脚本 |
-| [🛠️ 自行打包 Windows EXE](#-打包成独立-exe) | 不想在目标机安装 Python | PyInstaller onedir 构建，不依赖系统 Python |
+| [🛠️ 自行打包 Windows EXE](#build-exe) | 不想在目标机安装 Python | PyInstaller onedir 构建，不依赖系统 Python |
 
 > 模型没有塞进仓库。第一次选择某个 Whisper 模型时会自动下载到 `models/`，之后识别不再需要联网。AI 润色是可选功能，不装 Ollama 也能正常转写。
 
@@ -73,6 +73,8 @@
 2. **润色不覆盖原文**：润色结果单独写成 `.润色.txt`。模型改错了还能对照原稿，不用重新转写一遍。
 
 ---
+
+<a id="quickstart"></a>
 
 ## 🚀 极速上手
 
@@ -133,6 +135,8 @@ python app/voxscribe.py "a.mp4" --out-dir "D:\transcripts" --polish
 | `--compute-type` | 计算精度，默认 `float16`，可改 `int8_float16` / `int8` / `auto` |
 | `--beam-size` | 束搜索宽度，默认 `5`；调低可换取速度 |
 | `--prompt` | 初始提示词，用于提升简体输出与标点质量 |
+
+<a id="build-exe"></a>
 
 ### 🛠️ 打包成独立 EXE
 
