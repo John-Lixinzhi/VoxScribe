@@ -34,7 +34,8 @@
     "Android >= 4.1",
     "ios >= 8"
   ],
-  "author": "",
+  "author": "John-Lixinzhi",
+  "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.21.5",
     "@tarojs/components": "4.1.9",
