@@ -4,10 +4,10 @@
 >
 > 基于 faster-whisper 的 Windows 本地转写工具，支持批量音视频、TXT / SRT / JSON 输出，以及可选的 Ollama 中文润色。
 
-[![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-brightgreen?style=flat-square)](#)
-[![Python](https://img.shields.io/badge/Python-3.12-blue?style=flat-square)](#)
+[![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-brightgreen?style=flat-square)](#-极速上手)
+[![Python](https://img.shields.io/badge/Python-3.12-blue?style=flat-square)](requirements.txt)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-v1.0.0-blue?style=flat-square)](#)
+[![Version](https://img.shields.io/badge/Version-v1.0.0-blue?style=flat-square)](https://github.com/John-Lixinzhi/VoxScribe/commits/main)
 
 ---
 
@@ -129,6 +129,10 @@ python app/voxscribe.py "a.mp4" --out-dir "D:\transcripts" --polish
 | `--timestamps` | TXT 每行带时间戳 |
 | `--flat` | 不按文件建子目录，恢复平铺输出 |
 | `--polish` | 使用 Ollama 生成额外润色稿 |
+| `--polish-model` | 润色使用的 Ollama 模型，默认 `qwen2.5:7b` |
+| `--compute-type` | 计算精度，默认 `float16`，可改 `int8_float16` / `int8` / `auto` |
+| `--beam-size` | 束搜索宽度，默认 `5`；调低可换取速度 |
+| `--prompt` | 初始提示词，用于提升简体输出与标点质量 |
 
 ### 🛠️ 打包成独立 EXE
 
@@ -209,6 +213,7 @@ VoxScribe/
 ├── requirements-build.txt           # 打包依赖
 ├── .gitattributes                   # bat 使用 CRLF，图片按二进制提交
 ├── .gitignore                       # 排除模型、结果、日志与构建产物
+├── .env.example                     # 桌面端 / 云函数 / ASR 服务的环境变量清单
 ├── LICENSE                          # MIT
 └── README.md
 ```
@@ -259,7 +264,15 @@ VoxScribe/
 - `server/`：独立 ASR 服务，限制下载大小，后台识别并返回文本、字幕和分段数据。
 - 新账号赠送 600 秒；任务完成后按实际媒体时长扣减，支付回调按订单幂等入账。
 
-真实上线前需要填写自己的微信 AppID、CloudBase 环境、`ASR_SERVICE_URL`、`ASR_SERVICE_TOKEN` 和微信支付商户参数。没有这些配置时仍可开发界面和流程，但不应把 mock 结果当作真实转写或真实支付。
+本地跑小程序：
+
+```bash
+npm install
+npm run dev:weapp        # 产物在 dist/，用微信开发者工具导入项目根目录
+npm run build:h5         # 可选：浏览器里预览 H5 版（mock 数据）
+```
+
+真实上线前需要填写自己的微信 AppID、CloudBase 环境、`ASR_SERVICE_URL`、`ASR_SERVICE_TOKEN` 和微信支付商户参数，变量清单见 [.env.example](.env.example)。没有这些配置时仍可开发界面和流程，但不应把 mock 结果当作真实转写或真实支付。
 
 ## 📄 License
 
